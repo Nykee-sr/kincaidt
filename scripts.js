@@ -1,7 +1,43 @@
-/*!
-* Start Bootstrap - One Page Wonder v6.0.5 (https://startbootstrap.com/theme/one-page-wonder)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+const btn = document.querySelector('button');
+
+function sendData(data) {
+  const XHR = new XMLHttpRequest();
+  const FD = new FormData();
+
+  // Push our data into our FormData object
+  for (const [name, value] of Object.entries(data)) {
+    FD.append(name, value);
+  }
+
+  // Define what happens on successful data submission
+  XHR.addEventListener('load', (event) => {
+    alert('Yeah! Data sent and response loaded.');
+  });
+
+  // Define what happens in case of error
+  XHR.addEventListener('error', (event) => {
+    alert('Oops! Something went wrong.');
+  });
+
+  // Set up our request
+  XHR.open('POST', 'https://example.com/cors.php');
+
+  // Send our FormData object; HTTP headers are set automatically
+  XHR.send(FD);
+}
+
+btn.addEventListener('click', () => {
+  sendData({ test: 'ok' });
+});
+
+/* function sendEmail() {
+  Email.send({
+    Host: 'smtp.gmail.com',
+    To: 'nykee.sr@gmail.com',
+    From: 'nykee33@gmail.com',
+    Subject: 'Sending Email using javascript',
+    Body: 'Well that was easy!!',
+  }).then(function (message) {
+    alert('mail sent successfully');
+  });
+} */
