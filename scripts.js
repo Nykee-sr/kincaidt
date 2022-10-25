@@ -29,15 +29,3 @@ function sendData(data) {
 btn.addEventListener('click', () => {
   sendData({ test: 'ok' });
 });
-
-/* function sendEmail() {
-  Email.send({
-    Host: 'smtp.gmail.com',
-    To: 'nykee.sr@gmail.com',
-    From: 'nykee33@gmail.com',
-    Subject: 'Sending Email using javascript',
-    Body: 'Well that was easy!!',
-  }).then(function (message) {
-    alert('mail sent successfully');
-  });
-} */
