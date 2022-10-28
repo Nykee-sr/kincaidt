@@ -11719,3 +11719,6 @@ header.masthead .masthead-content .masthead-subheading {
     font-size: 4rem;
   }
 }
+p {
+  font-size: 150%;
+}
