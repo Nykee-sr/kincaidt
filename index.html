@@ -151,10 +151,13 @@
         <div class="row contact-form">
           <div class="col-md-6">
             <div id="success"></div>
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+
+            <form name="sentMessage" novalidate="novalidate" id="contact-form">
               <div class="control-group">
+                <input type="hidden" name="contact_number" />
                 <input
                   type="text"
+                  name="user_name"
                   class="form-control"
                   id="name"
                   placeholder="Your Name"
@@ -167,6 +170,7 @@
                 <input
                   type="email"
                   class="form-control"
+                  name="user_email"
                   id="email"
                   placeholder="Your Email"
                   required="required"
@@ -174,7 +178,7 @@
                 />
                 <p class="help-block text-danger"></p>
               </div>
-              <div class="control-group">
+              <!-- <div class="control-group">
                 <input
                   type="text"
                   class="form-control"
@@ -184,11 +188,12 @@
                   data-validation-required-message="Please enter a subject"
                 />
                 <p class="help-block text-danger"></p>
-              </div>
+              </div> -->
               <div class="control-group">
                 <textarea
                   class="form-control"
                   id="message"
+                  name="message"
                   placeholder="Message"
                   required="required"
                   data-validation-required-message="Please enter your message"
@@ -199,6 +204,7 @@
                 <button
                   class="btn custom-btn"
                   type="submit"
+                  value="Send"
                   id="sendMessageButton"
                 >
                   Send Message
@@ -208,6 +214,18 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="form_2">
+      <!-- <form id="contact-form"> -->
+      <!-- <input type="hidden" name="contact_number" /> -->
+      <!--  <label>Name</label>
+        <input type="text" name="user_name" /> -->
+      <!--  <label>Email</label>
+        <input type="email" name="user_email" /> -->
+      <!-- <label>Message</label>
+        <textarea name="message"></textarea> -->
+      <!--  <input type="submit" value="Send" /> -->
+      <!--    </form> -->
     </div>
 
     <!-- Footer-->
@@ -220,4 +238,14 @@
     <script src="scripts.js"></script>
     <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
   </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('uzjtKE0GEkKLXxnnj');
+    })();
+  </script>
 </html>
